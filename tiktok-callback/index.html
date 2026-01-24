@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>TikTok Callback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; }
+    code { display: block; white-space: pre-wrap; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h2>Callback TikTok reçu</h2>
+  <p>Si tu vois un <b>code</b> ci dessous, l’OAuth fonctionne.</p>
+  <code id="out">Chargement…</code>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const obj = {};
+    for (const [k, v] of params.entries()) obj[k] = v;
+    document.getElementById("out").textContent = JSON.stringify(obj, null, 2);
+  </script>
+</body>
+</html>
